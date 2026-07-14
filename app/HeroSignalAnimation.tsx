@@ -4,8 +4,6 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(useGSAP);
-
 type EegRendererOptions = {
   color: string;
   amplitude: number;
@@ -120,6 +118,7 @@ export function HeroSignalAnimation() {
 
   useGSAP(
     () => {
+      gsap.registerPlugin(useGSAP);
       const media = gsap.matchMedia();
 
       media.add(
