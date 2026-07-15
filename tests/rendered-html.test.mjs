@@ -23,6 +23,8 @@ test("server-renders the CogniThread project site", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>CogniThread \| Synchronized cognitive rehabilitation<\/title>/i);
+  assert.match(html, /\/cognithread-logo\.png/);
+  assert.match(html, /\/cognithread-report-1\.png/);
   assert.match(html, /Rehabilitation signals, finally moving together/);
   assert.match(html, /Synchronized context/);
   assert.match(html, /The software keeps every step connected/);
@@ -34,6 +36,23 @@ test("removes starter-only preview code and dependency", async () => {
   const packageJson = await readFile(new URL("../package.json", import.meta.url), "utf8");
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
   await assert.rejects(access(new URL("../app/_sites-preview", projectRoot)));
+});
+
+test("includes the supplied CogniThread logo asset", async () => {
+  await access(new URL("../public/cognithread-logo.png", import.meta.url));
+});
+
+test("includes all report pages used by the evidence wheel", async () => {
+  for (const asset of [
+    "cognithread-report-1.png",
+    "cognithread-report-2.png",
+    "cognithread-report-3.png",
+    "cognithread-report-1.pdf",
+    "cognithread-report-2.pdf",
+    "cognithread-report-3.pdf",
+  ]) {
+    await access(new URL(`../public/${asset}`, import.meta.url));
+  }
 });
 
 test("uses the warm visual system and accessible GSAP hero animation", async () => {

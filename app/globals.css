@@ -43,7 +43,7 @@ img { display: block; max-width: 100%; }
 }
 
 .brand, .footer-brand { display: flex; align-items: center; gap: 12px; font-weight: 650; letter-spacing: -0.02em; }
-.brand-mark { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: var(--ink); font-family: Georgia, serif; font-weight: 700; }
+.brand-logo { width: 180px; height: auto; }
 .site-header nav { display: flex; gap: 34px; font-size: 13px; }
 .site-header nav a { opacity: 0.7; transition: opacity 180ms ease; }
 .site-header nav a:hover, .site-header nav a:focus-visible { opacity: 1; }
@@ -196,16 +196,13 @@ img { display: block; max-width: 100%; }
 .evidence-copy > p:not(.eyebrow) { max-width: 660px; margin: 35px 0; color: rgba(255,255,255,.58); line-height: 1.7; }
 .metric-row { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 50px; border-top: 1px solid rgba(255,255,255,.16); }
 .metric-row div { padding: 24px 12px 0 0; }.metric-row strong { display: block; color: var(--honey); font: 400 48px Georgia, serif; }.metric-row span { color: rgba(255,248,237,.48); font-size: 11px; }
-.report-preview { position: relative; transform: rotate(2deg); box-shadow: 0 40px 90px rgba(0,0,0,.35); }
-.report-preview img { aspect-ratio: 1.414/1; object-fit: cover; object-position: top; }
-
 .poster-section { display: grid; grid-template-columns: 1fr .8fr; gap: 9vw; align-items: center; }
 .poster-frame { height: 730px; overflow: hidden; background: #ead0b6; box-shadow: 0 24px 70px rgba(59,23,18,.16); }
 .poster-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
 .poster-copy .section-index { margin-bottom: 75px; }
 
 footer { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 4vw; padding: 50px 5vw; color: var(--white); background: #2c0e0b; }
-.footer-brand > div { display: flex; flex-direction: column; }.footer-brand > div span { color: rgba(255,255,255,.45); font-size: 10px; }
+.footer-logo { width: 205px; }.footer-tagline { color: rgba(255,255,255,.45); font-size: 10px; }
 footer > a { justify-self: end; color: var(--honey); font-size: 11px; }
 
 @media (max-width: 1050px) {
@@ -220,7 +217,7 @@ footer > a { justify-self: end; color: var(--honey); font-size: 11px; }
 }
 
 @media (max-width: 760px) {
-  .site-header { height: 72px; padding: 0 20px; }.nav-cta { padding: 9px 13px; }
+  .site-header { height: 72px; padding: 0 20px; }.brand-logo { width: 132px; }.nav-cta { padding: 9px 13px; }
   .hero { min-height: 1030px; padding: 132px 20px 70px; }.hero-copy { width: 100%; }.hero h1 { font-size: clamp(3.5rem, 17vw, 5.7rem); }.hero-intro { font-size: 15px; }.hero-actions { align-items: stretch; flex-direction: column; width: 100%; }.button { width: 100%; }
   .signal-stage { top: 565px; left: 20px; right: 20px; width: auto; height: 420px; }.headband-orbit { width: 190px; height: 150px; top: 38px; right: 2px; }.emission-wave { inset: 28px; }.headband-photo { width: 185px; }.sync-flow { left: 18px; right: 8px; top: 220px; height: 68px; }.sync-lane-eeg { top: 0; }.sync-lane-behaviour { top: 40px; }.sync-core { top: 10px; width: 42px; height: 42px; }.wave-panel { left: 0; bottom: 0; width: 250px; padding: 12px; }.eeg-canvas { height: 34px; }.event-card { right: 0; bottom: -20px; width: 150px; padding: 14px; }.event-card strong { font-size: 16px; margin-bottom: 10px; }
   .section { padding: 82px 20px; }.section-index { margin-bottom: 45px; }
@@ -231,7 +228,7 @@ footer > a { justify-self: end; color: var(--honey); font-size: 11px; }
   .software-heading { grid-template-columns: 1fr; gap: 24px; }.software-heading > p:last-child { grid-column: 1; }.software-flow-track { grid-template-columns: 1fr; gap: 65px; margin-top: 60px; padding-left: 28px; padding-bottom: 0; }.software-flow-track::before { top: 8px; bottom: 25px; left: 6px; right: auto; width: 0; border-top: 0; border-left: 2px dashed rgba(182,64,56,.38); transform: none; }.software-step:nth-child(2) { transform: none; }.software-step::before { top: 7px; left: -22px; transform: none; }.software-step-heading { min-height: 0; margin-bottom: 25px; }.software-step > p { margin-top: 22px; text-align: left; }
   .capture-grid { grid-template-columns: 1fr; }.capture-card { min-height: 300px; }
   .facial-classifier-panel { margin-top: 12px; }.facial-classifier-copy { padding: 38px 24px 44px; }
-  .metric-row { gap: 10px; }.metric-row strong { font-size: 38px; }.report-preview { transform: none; }
+  .metric-row { gap: 10px; }.metric-row strong { font-size: 38px; }
   .poster-frame { height: 560px; }.poster-copy .section-index { margin-bottom: 45px; }
   footer { grid-template-columns: 1fr auto; gap: 28px; }
 }

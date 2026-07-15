@@ -4,13 +4,12 @@ import { useRef, type ReactNode } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(useGSAP);
-
 export function PageMotion({ children }: { children: ReactNode }) {
   const scope = useRef<HTMLElement>(null);
 
   useGSAP(
     () => {
+      gsap.registerPlugin(useGSAP);
       const media = gsap.matchMedia();
 
       media.add(

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import { HeroSignalAnimation } from "./HeroSignalAnimation";
 import { PageMotion } from "./PageMotion";
+import { ReportWheel } from "./ReportWheel";
 
 export const metadata: Metadata = {
   title: "CogniThread | Synchronized cognitive rehabilitation",
@@ -71,8 +72,7 @@ export default function Home() {
     <PageMotion>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="CogniThread home">
-          <span className="brand-mark">C</span>
-          <span>CogniThread</span>
+          <img className="brand-logo" src="/cognithread-logo.png" alt="CogniThread" />
         </a>
         <nav aria-label="Primary navigation">
           <a href="#why">Why</a>
@@ -299,9 +299,7 @@ export default function Home() {
             <div><strong>1</strong><span>therapist-ready view</span></div>
           </div>
         </div>
-        <div className="report-preview">
-          <img src="/report-preview.png" alt="CogniThread synthetic longitudinal cognitive monitoring report" />
-        </div>
+        <ReportWheel />
       </section>
 
       <section className="section poster-section" id="poster">
@@ -324,8 +322,8 @@ export default function Home() {
 
       <footer>
         <div className="footer-brand">
-          <span className="brand-mark">C</span>
-          <div><strong>CogniThread</strong><span>Signals in context.</span></div>
+          <img className="brand-logo footer-logo" src="/cognithread-logo.png" alt="CogniThread" />
+          <span className="footer-tagline">Signals in context.</span>
         </div>
         <a href="#top">Back to top ↑</a>
       </footer>
